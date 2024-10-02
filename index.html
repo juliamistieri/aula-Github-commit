@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fogo e Gelo - Robert Frost</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" onerror="handleError('styles')">
 </head>
 <body>
     <h1>Fogo e Gelo</h1>
-<p>"Alguns dizem que o mundo acabará em fogo,
-    Outros dizem em gelo.
-    Fico com quem prefere o fogo.
-    Mas, se tivesse de perecer duas vezes,
-    Acho que conheço o bastante do ódio
-    Para saber que a ruína pelo gelo
-    Também seria ótima
-    E bastaria."</p>
-<h2>Robert Frost</h2>
+    <p>"Alguns dizem que o mundo acabará em fogo,
+        Outros dizem em gelo.
+        Fico com quem prefere o fogo.
+        Mas, se tivesse de perecer duas vezes,
+        Acho que conheço o bastante do ódio
+        Para saber que a ruína pelo gelo
+        Também seria ótima
+        E bastaria."</p>
+    <h2>Robert Frost</h2>
 
-<script src="index.js"></script>
+    <script src="index.js" onerror="handleError('script')"></script>
+
+    <div class="error-message" id="error-message" style="color: red; font-weight: bold; display: none;">
+        Ocorreu um erro ao carregar os arquivos. Verifique se estão disponíveis.
+    </div>
+
+    <script>
+        function handleError(type) {
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = `Erro ao carregar o ${type === 'styles' ? 'estilo' : 'script'}.`;
+            errorMessage.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
